@@ -13,5 +13,5 @@ jobs:
       - run: echo ${{ secrets.PASSWORD }} | sudo -S mkdir -p /home/deploy003/actions-runner/work/scavenger-hunt-0001/scavenger-hunt-0001/build
       - run: echo ${{ secrets.PASSWORD }} | sudo -S chgrp -R samuel /home/deploy003/actions-runner/work/scavenger-hunt-0001/scavenger-hunt-0001 | echo ${{ secrets.PASSWORD }} | sudo -S chmod -R ug+rwX /home/deploy003/actions-runner/work/scavenger-hunt-0001/scavenger-hunt-0001 | echo ${{ secrets.PASSWORD }} | sudo -S find /home/deploy003/actions-runner/work/scavenger-hunt-0001/scavenger-hunt-0001 -type d -exec chmod g+s {} +
       - uses: actions/checkout@v2
-      - run: echo ${{ secrets.PASSWORD }} | sudo -S sudo docker-compose kill
-      - run: echo ${{ secrets.PASSWORD }} | sudo docker-compose up -d --force-recreate
+      - run: echo ${{ secrets.PASSWORD }} | sudo -S docker-compose kill
+      - run: echo ${{ secrets.PASSWORD }} | sudo -S docker-compose up -d --force-recreate
