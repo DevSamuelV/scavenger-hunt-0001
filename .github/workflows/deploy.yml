@@ -7,14 +7,11 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-    # env:
-    #   TOKEN: ${{ secrets.TOKEN }}
 
     steps:
       # if docker-compose up fails comment this then when it passes uncomment
       - run: echo ${{ secrets.PASSWORD }} | sudo -S mkdir -p /home/deploy003/actions-runner/work/scavenger-hunt-0001/scavenger-hunt-0001/build
       - run: echo ${{ secrets.PASSWORD }} | sudo -S chgrp -R samuel /home/deploy003/actions-runner/work/scavenger-hunt-0001/scavenger-hunt-0001 | echo ${{ secrets.PASSWORD }} | sudo -S chmod -R ug+rwX /home/deploy003/actions-runner/work/scavenger-hunt-0001/scavenger-hunt-0001 | echo ${{ secrets.PASSWORD }} | sudo -S find /home/deploy003/actions-runner/work/scavenger-hunt-0001/scavenger-hunt-0001 -type d -exec chmod g+s {} +
       - uses: actions/checkout@v2
-      - run: echo ${{ secrets.PASSWORD }} | sudo -S cp /home/deploy003/google_key.json /home/deploy003/actions-runner/work/scavenger-hunt-0001/scavenger-hunt-0001
       - run: echo ${{ secrets.PASSWORD }} | sudo -S docker-compose kill
       - run: docker-compose up -d --force-recreate
