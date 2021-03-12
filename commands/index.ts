@@ -2,7 +2,7 @@ import { Express } from "express";
 
 export class Index {
 	private clue =
-		"go back trace your steps but stop before you reach the end but don't for get the link";
+		"go back trace your steps but stop before you reach the end but don't for get the route";
 
 	constructor(express: Express) {
 		express.get("", (req, res) => {
