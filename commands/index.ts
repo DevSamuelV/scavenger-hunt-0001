@@ -17,7 +17,7 @@ export class Index {
 				});
 			}
 
-			if (key == "DVOO BLF WVXLWVW RG XLMTIZTGH")
+			if (key == "DVOO BLF WVXLWVW RG XLMTIZTGH ERHRG")
 				return res.send({
 					key: true,
 					message:
